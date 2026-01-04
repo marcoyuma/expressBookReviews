@@ -40,7 +40,7 @@ router.post("/login", (req, res) => {
 // Add a book review
 router.put("/auth/review/:isbn", authenticatedUser, (req, res) => {
     const isbn = req.params.isbn;
-    const review = req.body.review;
+    const review = req.query.review;
     const username = req.user.username;
 
     if (!books[isbn]) {
